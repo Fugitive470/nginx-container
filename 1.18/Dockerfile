@@ -79,6 +79,8 @@ RUN sed -i -f ${NGINX_APP_ROOT}/nginxconf.sed ${NGINX_CONF_PATH} && \
     chmod -R a+rwx /var/run && \
     chown -R 1001:0 /var/run && \
     rpm-file-permissions
+    COPY index.html /usr/share/nginx/html
+    COPY nginx.conf /etc/nginx/nginx.conf
 
 USER 1001
 
